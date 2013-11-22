@@ -1,0 +1,10 @@
+<section>
+  <h2>Versões</h2>
+  <ul>
+  <% @versoes.each do |v| %>
+    <li>
+    <%= link_to v.ver_banco, versao_path(v) %>
+    </li>
+  <% end %>
+  </ul>
+</section>

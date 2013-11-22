@@ -25,7 +25,12 @@
 </head>
 <body>
 
-	<%= yield %>
+	<div class="reveal">
+		<div class="slides">
+
+			<%= yield %>
+		</div>
+	</div>
 
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<script src="lib/js/head.min.js"></script>
