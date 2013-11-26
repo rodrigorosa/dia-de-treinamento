@@ -3,11 +3,18 @@ class ItemVersao < ActiveRecord::Base
   self.primary_key = "w_id"
 
   belongs_to :versao, class_name: "Versao", foreign_key: "w_id_versao", primary_key: "w_id"
+  belongs_to :modulo, class_name: "Modulo", foreign_key: "w_id_modulo", primary_key: "w_id"
+  belongs_to :evento, class_name: "Evento", foreign_key: "w_id_evento", primary_key: "w_id"
 
   scope :not_null, -> { where.not(titulo: :nill).where.not(desc_cliente: :nill) }
+  scope :por_modulo, -> {order(:w_id_modulo)}
 
   def usuario
     usuario_re = /[a-zA-Z]+/
-    w_dt_criacao.match(usuario_re)
+    w_dt_criacao.match(usuario_re).to_s
+  end
+
+  def cod_evento
+    evento.codigo if evento
   end
 end

@@ -1,1 +1,9 @@
-<%= render @versao.itens_versao.not_null  %>
+<section>
+  <h1>Versão <%= @versao.ver_banco%> </h1>
+</section>
+<% @usuarios_itens.each do |k, v| %>
+  <section>
+    <h1><%= k %></h1>
+  </section>
+  <%= render v  %>
+<% end %>
