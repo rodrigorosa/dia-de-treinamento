@@ -59,7 +59,20 @@ DiaDeTreinamento::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile << %w(
+    lib/js/classList.js
+    plugin/markdown/marked.js
+    plugin/markdown/markdown.js
+    plugin/highlight/highlight.js
+    plugin/zoom-js/zoom.js
+    plugin/notes/notes.js
+    lib/js/head.min.js
+    js/reveal.js
+    css/reveal.min.css
+    css/theme/default.css
+    lib/css/zenburn.css
+    lib/font/*.*
+  )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
