@@ -1,4 +1,7 @@
 <section>
   <h2><%= item_versao.titulo %></h2>
-  <p><%= item_versao.desc_cliente %></p>
+  <%= content_tag item_versao.desc_cliente.length > 865 ? :small : :p do %>
+    <%= item_versao.desc_cliente %>
+  <% end %>
+  <p><small><%= "#{item_versao.id_cliente_dest} | #{item_versao.usuario}" %></small></p>
 </section>
