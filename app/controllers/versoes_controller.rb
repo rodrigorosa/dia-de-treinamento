@@ -5,7 +5,7 @@ class VersoesController < ApplicationController
 
   def show
     @versao = Versao.find(params[:id])
-    @usuarios_itens = @versao.itens_versao.not_null.por_modulo.group_by(&:usuario)
+    @usuarios_itens = @versao.itens_versao.incluir_treinamento.por_modulo.group_by(&:usuario)
   end
 
 end

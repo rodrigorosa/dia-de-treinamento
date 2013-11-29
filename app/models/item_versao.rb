@@ -6,7 +6,7 @@ class ItemVersao < ActiveRecord::Base
   belongs_to :modulo, class_name: "Modulo", foreign_key: "w_id_modulo", primary_key: "w_id"
   belongs_to :evento, class_name: "Evento", foreign_key: "w_id_evento", primary_key: "w_id"
 
-  scope :not_null, -> { where.not(titulo: :nill).where.not(desc_cliente: :nill) }
+  scope :incluir_treinamento, -> { where(incluir_treinamento: 'S') }
   scope :por_modulo, -> {order(:w_id_modulo)}
 
   def usuario
