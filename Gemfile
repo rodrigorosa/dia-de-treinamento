@@ -9,7 +9,7 @@ platform :jruby do
   gem "activerecord-jdbc-adapter"
 end
 
-platforms :ruby, :mswin, :mingw do
+unless defined? JRUBY_VERSION 
   gem 'ruby-oci8'
 end
 
