@@ -1,8 +1,8 @@
 <section>
   <h3><%= item_versao.modulo.descricao %></h3>
   <h2><%= item_versao.titulo %></h2>
-  <%= content_tag (item_versao.descricao_item ? item_versao.descricao_item.length : 0) > 750 ? :small : :p do %>
-    <%= item_versao.descricao_item %>
+  <%= content_tag item_versao.descricao_para_slide.length > 600 ? :small : :p do %>
+    <%= item_versao.descricao_para_slide %>
   <% end %>
   <p><small><%= "#{item_versao.cod_evento} | #{item_versao.id_cliente_dest} | #{item_versao.usuario}" %></small></p>
 </section>

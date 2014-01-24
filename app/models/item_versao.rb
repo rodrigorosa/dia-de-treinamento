@@ -9,6 +9,10 @@ class ItemVersao < ActiveRecord::Base
   scope :incluir_treinamento, -> { where(incluir_treinamento: 'S') }
   scope :por_modulo, -> {order(:w_id_modulo)}
 
+  def descricao_para_slide
+    (desc_cliente.to_s.empty? ? descricao : desc_cliente).to_s
+  end
+
   def usuario
     usuario_re = /[a-zA-Z]+/
     w_dt_criacao.match(usuario_re).to_s
@@ -18,7 +22,4 @@ class ItemVersao < ActiveRecord::Base
     evento.codigo if evento
   end
 
-  def descricao_item
-    desc_cliente ? desc_cliente : descricao
-  end
 end
