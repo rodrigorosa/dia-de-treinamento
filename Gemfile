@@ -7,6 +7,9 @@ gem 'activerecord-oracle_enhanced-adapter'
 
 platform :jruby do
   gem "activerecord-jdbc-adapter"
+  gem "jruby-openssl"
+  gem 'jruby-rack'
+  gem 'bouncy-castle-java'
 end
 
 unless defined? JRUBY_VERSION 

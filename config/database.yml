@@ -5,9 +5,14 @@
 #   gem 'sqlite3'
 development:
   adapter: oracle_enhanced
+  <% if defined?(JRUBY_VERSION) %>
+  driver: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@192.168.0.3:1521:WONDER
+  <% else %>
+  database: 192.168.0.3/wonder
+  <% end %>
   username: consulta
   password: consulta
-  database: 192.168.0.3/wonder
 
 
 
@@ -28,20 +33,11 @@ development:
 
 production:
   adapter: oracle_enhanced
-<% if possui_conf %>
-  url: <%= database['url'] %>
-  username: <%= database['username'] %>
-  password: <%= database['password'] %>
+  <% if defined?(JRUBY_VERSION) %>
   driver: oracle.jdbc.driver.OracleDriver
-<% elsif defined?(JRUBY_VERSION) && $servlet_context %>
-  jndi: "java:/WonderDesenv"
-<% elsif defined?(JRUBY_VERSION) %>
+  url: jdbc:oracle:thin:@192.168.0.3:1521:WONDER
+  <% else %>
+  database: 192.168.0.3/wonder
+  <% end %>
   username: consulta
   password: consulta
-  driver: oracle.jdbc.driver.OracleDriver
-  url: jdbc:oracle:thin:@192.168.0.74:1521:DESENV
-<% else %>
-  username: consulta
-  password: consulta
-  database: 192.168.0.74/desenv
-<% end %>
