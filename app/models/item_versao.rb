@@ -17,4 +17,8 @@ class ItemVersao < ActiveRecord::Base
   def cod_evento
     evento.codigo if evento
   end
+
+  def descricao_item
+    desc_cliente ? desc_cliente : descricao
+  end
 end
