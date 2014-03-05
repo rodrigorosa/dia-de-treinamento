@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.0.0'
 
 gem 'activerecord-oracle_enhanced-adapter'
 
@@ -10,6 +10,10 @@ platform :jruby do
   gem "jruby-openssl"
   gem 'jruby-rack'
   gem 'bouncy-castle-java'
+end
+
+group :development do
+  gem 'warbler'
 end
 
 unless defined? JRUBY_VERSION 
