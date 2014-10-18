@@ -6,4 +6,8 @@ class Versao < ActiveRecord::Base
 
   default_scope -> { where(compilacao: 1) }
   scope :ultimas, -> { order(w_id: :desc) }
+
+  def to_param
+    "#{self.id}-#{self.ver_banco}"
+  end
 end
