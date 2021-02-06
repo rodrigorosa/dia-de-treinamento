@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3"
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.11'
@@ -8,19 +8,17 @@ gem 'rails', '~> 4.2.11'
 gem 'activerecord-oracle_enhanced-adapter'
 
 platform :jruby do
-  gem "activerecord-jdbc-adapter"
-  gem "jruby-openssl"
-  gem 'jruby-rack'
+  gem 'activerecord-jdbc-adapter'
   gem 'bouncy-castle-java'
+  gem 'jruby-openssl'
+  gem 'jruby-rack'
 end
 
 group :development do
   gem 'warbler'
 end
 
-unless defined? JRUBY_VERSION
-  gem 'ruby-oci8'
-end
+gem 'ruby-oci8' unless defined? JRUBY_VERSION
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -32,7 +30,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
