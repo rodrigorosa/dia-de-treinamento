@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "1.9.3"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.11'
 
@@ -16,7 +18,7 @@ group :development do
   gem 'warbler'
 end
 
-unless defined? JRUBY_VERSION 
+unless defined? JRUBY_VERSION
   gem 'ruby-oci8'
 end
 
