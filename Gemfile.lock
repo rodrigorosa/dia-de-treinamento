@@ -63,7 +63,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jruby-jars (9.2.14.0)
     jruby-rack (1.1.21)
-    loofah (2.9.0)
+    loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
